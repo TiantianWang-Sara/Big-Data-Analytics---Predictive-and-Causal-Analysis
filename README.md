@@ -8,7 +8,7 @@ Methodology
 
 Variable Selection
 
-The historical property data set that we gained has 62 variables that may affect a home’s sale price. Suggested by the analysis of features highlighted by Cook County Assessor’s Office’s data scientist Dan Snow, we choose 28 variables that have strong predictive powers as shown in the table (APPENDIX A) to predict house prices.
+The historical property data set that we gained has 62 variables that may affect a home’s sale price. Suggested by the analysis of features highlighted by Cook County Assessor’s Office’s data scientist Dan Snow, we choose 28 variables that have strong predictive powers to predict house prices.
 
 Data Processing
 

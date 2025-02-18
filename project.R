@@ -7,7 +7,7 @@ library(gbm)
 library(psych)
 
 # Set Directory
-setwd("C:/Users/asus/Desktop/FIN550/data")
+setwd("~/Desktop/UIUC/Academic Courses/Fall 2023/Fin 550 Big Data/Project")
 
 # Disable Scientific Notation
 options(scipen = 999)
@@ -81,7 +81,7 @@ pre$char_bsmt <- as.factor(pre$char_bsmt)
 pre_no_na <- drop_na(pre)
 pre_na <- anti_join(pre,pre_no_na)
 
-# Lasso Model Training and Testing (about 15 minutes)
+# Lasso Model Training and Testing
 x <- model.matrix(sale_price~0+., data = train_data)
 y <- train_data$sale_price
 
@@ -92,7 +92,7 @@ new_x <- model.matrix(sale_price~0+., data = test_data)
 predictions <- predict(fit, newx=new_x, s = "lambda.min")
 mean((predictions-test_data$sale_price)^2)
 
-# Boosting Tree Training and Testing (about 5 minutes)
+# Boosting Tree Training and Testing
 set.seed(675256138)
 gbm_model <- gbm(sale_price~. , data = train_data, n.trees = 1000, interaction.depth = 1, shrinkage = 0.1, cv.folds = 50, distribution ="gaussian")
 
